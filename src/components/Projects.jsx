@@ -18,7 +18,7 @@ const projects = [
     img: '/assets/img/jira.jpg',
     title: 'IT Ticketing System Simulation',
     desc: 'Jira Service Management environment with SLA rules, escalation workflows, documentation standards, and full incident lifecycle simulation.',
-    github: 'https://github.com/HuynhDucVo/JiraTicket', 
+    github: 'https://github.com/HuynhDucVo/JiraTicket',
   },
   {
     img: '/assets/img/cilis-docs.jpg',
@@ -41,7 +41,7 @@ const projects = [
   {
     img: '/assets/img/Library.jpg',
     title: 'Library Management System',
-    desc: 'The Library Management System is a three-tier web application designed to streamline library operations. It allows administrators and users to manage books, borrowing records, and user accounts efficiently.',
+    desc: 'A three-tier web application for managing books, borrowing records, and user accounts with role-based access and SQL Server backend.',
     github: 'https://github.com/HuynhDucVo/Library-Management-System',
   },
 ];
@@ -58,26 +58,27 @@ const fadeInUp = {
 
 export default function Projects() {
   return (
-    <>  
+    <>
       <motion.section
         id="portfolio"
-        className="py-12 bg-gray-900 dark:bg-white text-white dark:text-gray-900"
+        className="py-16 bg-gray-900 dark:bg-white text-white dark:text-gray-900"
         initial="hidden"
         whileInView="visible"
         variants={container}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="container mx-auto px-8 max-w-5xl flex flex-col items-center">
+        <div className="container mx-auto px-6 max-w-6xl flex flex-col items-center">
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl font-bold mb-2 text-center bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+            className="text-4xl font-bold mb-3 text-center bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
           >
             Projects
           </motion.h2>
+
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-center mb-8 text-gray-300 dark:text-gray-600"
+            className="text-lg text-center mb-10 text-gray-300 dark:text-gray-600 max-w-2xl"
           >
             Some of my recent work
           </motion.p>
@@ -89,39 +90,52 @@ export default function Projects() {
             effect="coverflow"
             grabCursor
             centeredSlides
-            slidesPerView="auto"
-            coverflowEffect={{ rotate: 30, stretch: 0, depth: 100, modifier: 1, slideShadows: false }}
-            className="mySwiper mt-5"
+            slidesPerView={1.2}
+            breakpoints={{
+              768: { slidesPerView: 1.6 },
+              1024: { slidesPerView: 2 },
+            }}
+            coverflowEffect={{
+              rotate: 20,
+              stretch: 0,
+              depth: 150,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            className="w-full pb-12"
           >
             {projects.map((p, i) => (
-              <SwiperSlide key={i} className="flex justify-center p-4">
+              <SwiperSlide key={i} className="flex justify-center">
                 <motion.div
                   variants={fadeInUp}
-                  whileHover={{ scale: 1.05 }}
-                  className="transform-gpu will-change-transform flex flex-col md:flex-row bg-gray-800 dark:bg-white text-white dark:text-gray-900 rounded-2xl overflow-hidden border border-gray-700 dark:border-gray-300 transition-all duration-300"
+                  whileHover={{ scale: 1.03 }}
+                  className="w-full max-w-2xl bg-gray-800 dark:bg-white text-white dark:text-gray-900 rounded-2xl overflow-hidden border border-gray-700 dark:border-gray-300 shadow-lg transition-all duration-300"
                 >
                   {/* Image */}
-                  <div className="md:w-1/2 w-full">
+                  <div className="w-full h-56 md:h-64 overflow-hidden">
                     <img
                       src={p.img}
                       alt={p.title}
-                      className="object-cover w-full h-48 md:h-full"
+                      className="object-cover w-full h-full"
                     />
                   </div>
+
                   {/* Content */}
-                  <div className="p-6 md:w-1/2 flex flex-col justify-between">
-                    <h3 className="text-2xl font-semibold mb-4 text-center md:text-left">
+                  <div className="p-6 flex flex-col">
+                    <h3 className="text-2xl font-semibold mb-3 text-center">
                       {p.title}
                     </h3>
-                    <p className="flex-1 mb-6 text-gray-300 dark:text-gray-700 text-center md:text-left">
+
+                    <p className="text-gray-300 dark:text-gray-700 text-center mb-6">
                       {p.desc}
                     </p>
-                    <div className="flex justify-center md:justify-start">
+
+                    <div className="flex justify-center">
                       <a
                         href={p.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow hover:opacity-90 transition"
+                        className="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow hover:opacity-90 transition"
                       >
                         GitHub
                       </a>
@@ -133,6 +147,7 @@ export default function Projects() {
           </Swiper>
         </div>
       </motion.section>
+
       <div className="w-full h-px bg-gray-800 dark:bg-gray-200 opacity-60 my-8" />
     </>
   );
