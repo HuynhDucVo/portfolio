@@ -56,7 +56,7 @@ export default function About() {
                 IT Support Technician with a B.S. in Computer Science and hands-on experience troubleshooting POS systems, networks, and user issues in fast‑paced environments. 
                 I enjoy solving problems, supporting people, and building systems that actually work in the real world. 
                 I bring a calm, thoughtful approach to fast-paced environments and a genuine interest in making technology easier for others.
-                
+              <br></br>
                 Skilled in Active Directory, DNS, DHCP, and VLANs through real home lab projects. 
                 Fluent in English and Vietnamese, with a strong focus on reliability, problem-solving, and delivering clear technical support to both technical and non-technical users.
               </motion.p>
