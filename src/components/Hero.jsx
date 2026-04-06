@@ -70,8 +70,8 @@ export default function Hero() {
               variants={fadeInUp}
               className="text-lg text-gray-200 dark:text-gray-800 max-w-md text-center md:text-left"
             >
-              Aspiring software engineer passionate about collaborative, cloud-first
-              solutions and impactful products. Fluent in English & Vietnamese.
+              Motivated and curious technology professional who enjoys solving problems, supporting people, and keeping systems running smoothly. 
+              Fluent in English and Vietnamese, with a steady approach to learning and adapting in fast‑paced environments.
             </motion.p>
 
             {/* Call to Action */}
