@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  FaAngleDown,
   FaNetworkWired,
   FaTools,
   FaServer,
@@ -8,8 +7,15 @@ import {
   FaLanguage,
   FaWindows,
 } from "react-icons/fa";
-import { SiLinux, SiJira, SiGit, SiDocker, SiMysql, SiPython } from "react-icons/si";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  SiLinux,
+  SiJira,
+  SiGit,
+  SiDocker,
+  SiMysql,
+  SiPython,
+} from "react-icons/si";
+import { motion } from "framer-motion";
 
 // ---------------------- EXPERIENCE DATA ----------------------
 const experienceData = [
@@ -41,60 +47,60 @@ const experienceData = [
   },
 ];
 
-// ---------------------- SKILLS DATA (IT-FOCUSED) ----------------------
+// ---------------------- SKILLS DATA ----------------------
 const skillsData = [
   {
     title: "Networking",
     icon: <FaNetworkWired size={24} className="text-blue-400" />,
     skills: [
-      { name: "VLANs" },
-      { name: "DHCP" },
-      { name: "DNS" },
-      { name: "VPN" },
-      { name: "Subnetting" },
-      { name: "UniFi (Controller & Firewall)" },
+      { name: "VLANs", icon: <FaNetworkWired className="text-blue-300" /> },
+      { name: "DHCP", icon: <FaNetworkWired className="text-blue-300" /> },
+      { name: "DNS", icon: <FaNetworkWired className="text-blue-300" /> },
+      { name: "VPN", icon: <FaNetworkWired className="text-blue-300" /> },
+      { name: "Subnetting", icon: <FaNetworkWired className="text-blue-300" /> },
+      { name: "UniFi (Controller & Firewall)", icon: <FaNetworkWired className="text-blue-300" /> },
     ],
   },
   {
     title: "Systems",
     icon: <FaServer size={24} className="text-green-400" />,
     skills: [
-      { name: "Windows 10/11", icon: <FaWindows size={20} className="text-blue-500" /> },
-      { name: "Windows Server (AD, GPO)" },
-      { name: "Linux (Ubuntu)", icon: <SiLinux size={20} className="text-gray-500" /> },
+      { name: "Windows 10/11", icon: <FaWindows className="text-blue-500" /> },
+      { name: "Windows Server (AD, GPO)", icon: <FaWindows className="text-blue-500" /> },
+      { name: "Linux (Ubuntu)", icon: <SiLinux className="text-gray-500" /> },
     ],
   },
   {
     title: "Tools",
     icon: <FaTools size={24} className="text-yellow-400" />,
     skills: [
-      { name: "Jira", icon: <SiJira size={20} className="text-blue-600" /> },
-      { name: "Git", icon: <SiGit size={20} className="text-red-600" /> },
-      { name: "OS Imaging Tools" },
-      { name: "VS Code" },
-      { name: "Docker", icon: <SiDocker size={20} className="text-blue-400" /> },
-      { name: "MySQL", icon: <SiMysql size={20} className="text-blue-500" /> },
+      { name: "Jira", icon: <SiJira className="text-blue-600" /> },
+      { name: "Git", icon: <SiGit className="text-red-600" /> },
+      { name: "OS Imaging Tools", icon: <FaTools className="text-yellow-400" /> },
+      { name: "VS Code", icon: <FaTools className="text-yellow-400" /> },
+      { name: "Docker", icon: <SiDocker className="text-blue-400" /> },
+      { name: "MySQL", icon: <SiMysql className="text-blue-500" /> },
     ],
   },
   {
     title: "Scripting",
     icon: <FaTerminal size={24} className="text-purple-400" />,
     skills: [
-      { name: "Python", icon: <SiPython size={20} className="text-yellow-300" /> },
-      { name: "Bash" },
+      { name: "Python", icon: <SiPython className="text-yellow-300" /> },
+      { name: "Bash", icon: <FaTerminal className="text-purple-400" /> },
     ],
   },
   {
     title: "Languages",
     icon: <FaLanguage size={24} className="text-indigo-400" />,
     skills: [
-      { name: "English (Fluent)" },
-      { name: "Vietnamese (Fluent)" },
+      { name: "English (Fluent)", icon: <FaLanguage className="text-indigo-600" /> },
+      { name: "Vietnamese (Fluent)", icon: <FaLanguage className="text-red-500" /> },
     ],
   },
 ];
 
-// Framer Motion variants
+// Animation
 const container = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
@@ -105,9 +111,6 @@ const fadeInUp = {
 };
 
 export default function Skills() {
-  const [openIndex, setOpenIndex] = useState(-1);
-  const toggle = (idx) => setOpenIndex(openIndex === idx ? -1 : idx);
-
   return (
     <>
       {/* EXPERIENCE SECTION */}
@@ -117,16 +120,16 @@ export default function Skills() {
         initial="hidden"
         whileInView="visible"
         variants={container}
-        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl font-bold mb-2 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+            className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
           >
             Experience
           </motion.h2>
+
           <motion.p
             variants={fadeInUp}
             className="text-lg text-center mb-8 text-gray-300 dark:text-gray-600"
@@ -165,16 +168,16 @@ export default function Skills() {
         initial="hidden"
         whileInView="visible"
         variants={container}
-        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl font-bold mb-2 text-center bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+            className="text-4xl font-bold text-center mb-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
           >
             Skills
           </motion.h2>
+
           <motion.p
             variants={fadeInUp}
             className="text-lg text-center mb-8 text-gray-300 dark:text-gray-600"
@@ -185,47 +188,28 @@ export default function Skills() {
           <div className="grid md:grid-cols-2 gap-8">
             {skillsData.map((group, idx) => (
               <motion.div
-                key={group.title}
+                key={idx}
                 variants={fadeInUp}
-                className="border border-gray-700 dark:border-gray-300 rounded-xl overflow-hidden"
+                className="border border-gray-700 dark:border-gray-300 rounded-xl p-6"
               >
-                <button
-                  onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between p-6 bg-gray-800 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-100 transition-colors focus:outline-none"
-                >
-                  <div className="flex items-center space-x-3">
-                    {group.icon}
-                    <span className="text-xl font-semibold">{group.title}</span>
-                  </div>
-                  <FaAngleDown
-                    className={`transition-transform ${openIndex === idx ? "rotate-180" : ""}`}
-                  />
-                </button>
-                <AnimatePresence>
-                  {openIndex === idx && (
-                    <motion.ul
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="bg-gray-900 dark:bg-white text-gray-200 dark:text-gray-800 list-none p-6 space-y-3"
-                    >
-                      {group.skills.map((skill) => (
-                        <li key={skill.name} className="flex items-center space-x-2">
-                          {skill.icon}
-                          <span>{skill.name}</span>
-                        </li>
-                      ))}
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
+                <div className="flex items-center space-x-3 mb-4">
+                  {group.icon}
+                  <span className="text-xl font-semibold">{group.title}</span>
+                </div>
+
+                <ul className="space-y-3">
+                  {group.skills.map((skill, i) => (
+                    <li key={i} className="flex items-center space-x-2">
+                      {skill.icon}
+                      <span>{skill.name}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
         </div>
       </motion.section>
-
-      <div className="w-full h-px bg-gray-800 dark:bg-gray-200 opacity-60 my-8" />
     </>
   );
 }
