@@ -118,7 +118,7 @@ export default function Hero() {
                   y="-26"
                   width="300"
                   height="300"
-                  href="/assets/img/Pro.jpg"
+                  href="/assets/img/profile.jpg"
                 />
               </g>
             </svg>
