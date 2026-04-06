@@ -64,9 +64,9 @@ export default function About() {
               <div className="flex space-x-8">
                 {[
                   { label: 'GPA',    value: '3.93' },
-                  { label: 'Projects', value: '6'    },
+                  { label: 'Projects', value: '10'    },
                   { label: 'Degrees',  value: '2'    },
-                  { label: 'Certificate', value: '1'}
+                  { label: 'Certificates', value: '1'}
                 ].map((s) => (
                   <motion.div
                     key={s.label}
