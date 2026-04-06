@@ -9,6 +9,18 @@ import 'swiper/css/effect-coverflow';
 
 const projects = [
   {
+    img: '/assets/img/homelab.jpg',
+    title: 'Home Lab – Active Directory & Networking',
+    desc: 'Virtualized Windows Server + Linux lab with VLANs, AD, DNS, DHCP, GPO, VPN, and simulated outages for real troubleshooting practice.',
+    github: 'https://github.com/HuynhDucVo/HomeLab',
+  },
+  {
+    img: '/assets/img/jira.jpg',
+    title: 'IT Ticketing System Simulation',
+    desc: 'Jira Service Management environment with SLA rules, escalation workflows, documentation standards, and full incident lifecycle simulation.',
+    github: 'https://github.com/HuynhDucVo/JiraTicket', 
+  },
+  {
     img: '/assets/img/cilis-docs.jpg',
     title: 'Cilis Docs – Collaborative Cloud Editor',
     desc: 'Built with Next.js, Liveblocks & Yjs CRDTs for real‑time collaboration, TipTap rich‑text, Clerk auth, and MongoDB storage.',
