@@ -41,7 +41,7 @@ const experienceData = [
   },
 ];
 
-// ---------------------- SKILLS DATA ----------------------
+// ---------------------- SKILLS DATA (IT-FOCUSED) ----------------------
 const skillsData = [
   {
     title: "Networking",
@@ -94,7 +94,7 @@ const skillsData = [
   },
 ];
 
-// ---------------------- ANIMATION VARIANTS ----------------------
+// Framer Motion variants
 const container = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
@@ -104,14 +104,13 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-// ---------------------- MAIN COMPONENT ----------------------
 export default function Skills() {
   const [openIndex, setOpenIndex] = useState(-1);
   const toggle = (idx) => setOpenIndex(openIndex === idx ? -1 : idx);
 
   return (
     <>
-      {/* ---------------------- EXPERIENCE SECTION ---------------------- */}
+      {/* EXPERIENCE SECTION */}
       <motion.section
         id="experience"
         className="py-12 bg-gray-900 dark:bg-white text-white dark:text-gray-900"
@@ -128,7 +127,6 @@ export default function Skills() {
           >
             Experience
           </motion.h2>
-
           <motion.p
             variants={fadeInUp}
             className="text-lg text-center mb-8 text-gray-300 dark:text-gray-600"
@@ -160,7 +158,7 @@ export default function Skills() {
 
       <div className="w-full h-px bg-gray-800 dark:bg-gray-200 opacity-60 my-8" />
 
-      {/* ---------------------- SKILLS SECTION ---------------------- */}
+      {/* SKILLS SECTION */}
       <motion.section
         id="skills"
         className="py-12 bg-gray-900 dark:bg-white text-white dark:text-gray-900"
@@ -177,7 +175,6 @@ export default function Skills() {
           >
             Skills
           </motion.h2>
-
           <motion.p
             variants={fadeInUp}
             className="text-lg text-center mb-8 text-gray-300 dark:text-gray-600"
@@ -194,7 +191,7 @@ export default function Skills() {
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between p-6 bg-gray-800 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-100 transition-colors"
+                  className="w-full flex items-center justify-between p-6 bg-gray-800 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-100 transition-colors focus:outline-none"
                 >
                   <div className="flex items-center space-x-3">
                     {group.icon}
@@ -204,7 +201,6 @@ export default function Skills() {
                     className={`transition-transform ${openIndex === idx ? "rotate-180" : ""}`}
                   />
                 </button>
-
                 <AnimatePresence>
                   {openIndex === idx && (
                     <motion.ul
@@ -212,7 +208,7 @@ export default function Skills() {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="bg-gray-900 dark:bg-white text-gray-200 dark:text-gray-800 p-6 space-y-3"
+                      className="bg-gray-900 dark:bg-white text-gray-200 dark:text-gray-800 list-none p-6 space-y-3"
                     >
                       {group.skills.map((skill) => (
                         <li key={skill.name} className="flex items-center space-x-2">
