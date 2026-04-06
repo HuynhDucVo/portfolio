@@ -84,7 +84,7 @@ export default function About() {
               <motion.a
                 variants={fadeIn}
                 download
-                href="/assets/file/MyCV.pdf"
+                href="/assets/file/IT-Resume-HDV.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-2 rounded border border-white dark:border-gray-900 transition"
