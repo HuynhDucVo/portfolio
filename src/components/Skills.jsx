@@ -209,6 +209,9 @@ export default function Skills() {
             ))}
           </div>
         </div>
+        
+        {/* Divider */}
+        <div className="w-full h-px bg-gray-800 dark:bg-gray-200 opacity-60 my-8" />
       </motion.section>
     </>
   );
