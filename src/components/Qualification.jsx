@@ -105,7 +105,7 @@ export default function Qualification() {
               </p>
 
               <a
-                href="YOUR_CERT_LINK_HERE"
+                href="https://www.credly.com/badges/335065a5-54ac-4289-b943-c42f3af97260/linked_in_profile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition"
