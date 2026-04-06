@@ -53,10 +53,12 @@ export default function About() {
                 variants={fadeIn}
                 className="text-center md:text-left text-gray-200 dark:text-gray-800"
               >
-                Computer Science student at San Jose State University (GPA: 3.93, expected May 2025).
-                Experienced in collaborative software engineering, real-time web apps, and cloud-first
-                solutions. Fluent in English and Vietnamese. Passionate about building impactful,
-                scalable products and always eager to learn new technologies.
+                IT Support Technician with a B.S. in Computer Science and hands-on experience troubleshooting POS systems, networks, and user issues in fast‑paced environments. 
+                I enjoy solving problems, supporting people, and building systems that actually work in the real world. 
+                I bring a calm, thoughtful approach to fast-paced environments and a genuine interest in making technology easier for others.
+                
+                Skilled in Active Directory, DNS, DHCP, and VLANs through real home lab projects. 
+                Fluent in English and Vietnamese, with a strong focus on reliability, problem-solving, and delivering clear technical support to both technical and non-technical users.
               </motion.p>
 
               <div className="flex space-x-8">
@@ -64,6 +66,7 @@ export default function About() {
                   { label: 'GPA',    value: '3.93' },
                   { label: 'Projects', value: '6'    },
                   { label: 'Degrees',  value: '2'    },
+                  { label: 'Certificate', value: '1'}
                 ].map((s) => (
                   <motion.div
                     key={s.label}
