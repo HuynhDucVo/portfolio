@@ -77,7 +77,7 @@ export default function Qualification() {
               <div className="flex-1">
                 <h3 className="text-lg font-bold leading-tight">CompTIA A+</h3>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">Core IT & Troubleshooting</p>
-                <a href="https://www.credly.com/..." target="_blank" rel="noopener noreferrer" className="text-xs text-blue-400 hover:underline">Verify Badge →</a>
+                <a href="https://www.credly.com/badges/99f29bfb-4722-4485-aff7-5c7dd02405a8/linked_in_profile" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-400 hover:underline">Verify Badge →</a>
               </div>
             </motion.div>
 
@@ -90,7 +90,7 @@ export default function Qualification() {
               <div className="flex-1">
                 <h3 className="text-lg font-bold leading-tight">CompTIA Network+</h3>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">Infrastructure & Security</p>
-                <a href="https://www.credly.com/..." target="_blank" rel="noopener noreferrer" className="text-xs text-purple-400 hover:underline">Verify Badge →</a>
+                <a href="https://www.credly.com/badges/2990c976-99a2-41ba-a9a1-d62a8cc516bf/linked_in_profile" target="_blank" rel="noopener noreferrer" className="text-xs text-purple-400 hover:underline">Verify Badge →</a>
               </div>
             </motion.div>
           </div>
