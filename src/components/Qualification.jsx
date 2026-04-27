@@ -22,10 +22,11 @@ export default function Qualification() {
         variants={container}
         viewport={{ once: true, amount: 0.1 }}
       >
-        <div className="container mx-auto px-6 max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12">
+        {/* Changed items-start to items-center and justify-center to center the whole row */}
+        <div className="container mx-auto px-6 max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-start justify-center">
 
-          {/* ---------------- LEFT: EDUCATION (Spans 2 columns) ---------------- */}
-          <div>
+          {/* ---------------- LEFT: EDUCATION (Centered via Column Spans) ---------------- */}
+          <div className="lg:col-span-7">
             <motion.h2
               variants={fadeInUp}
               className="text-4xl font-bold mb-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
@@ -40,7 +41,6 @@ export default function Qualification() {
             </motion.p>
 
             <ol className="relative border-l-2 border-white dark:border-gray-900 pl-6 space-y-10">
-
               {/* SJSU */}
               <motion.li variants={fadeInUp} className="relative">
                 <span className="absolute -left-6 top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
@@ -70,12 +70,11 @@ export default function Qualification() {
                   Aug 2020 – May 2023 • San Jose, CA
                 </p>
               </motion.li>
-
             </ol>
           </div>
 
-          {/* ---------------- RIGHT: CERTIFICATIONS (Small & Compact) ---------------- */}
-          <div className="flex flex-col gap-4">
+          {/* ---------------- RIGHT: CERTIFICATIONS (Centered Side Column) ---------------- */}
+          <div className="lg:col-span-5 flex flex-col gap-4 self-center lg:mt-16">
             <motion.h2
               variants={fadeInUp}
               className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
@@ -92,7 +91,7 @@ export default function Qualification() {
               <div className="flex-1">
                 <h3 className="text-lg font-bold leading-tight">CompTIA A+</h3>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">Core IT & Troubleshooting</p>
-                <a href="https://www.credly.com/badges/99f29bfb-4722-4485-aff7-5c7dd02405a8/linked_in_profile" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-400 hover:underline">Verify Badge →</a>
+                <a href="https://www.credly.com/..." target="_blank" rel="noopener noreferrer" className="text-xs text-blue-400 hover:underline">Verify Badge →</a>
               </div>
             </motion.div>
 
@@ -105,7 +104,7 @@ export default function Qualification() {
               <div className="flex-1">
                 <h3 className="text-lg font-bold leading-tight">CompTIA Network+</h3>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">Infrastructure & Security</p>
-                <a href="https://www.credly.com/badges/2990c976-99a2-41ba-a9a1-d62a8cc516bf/linked_in_profile" target="_blank" rel="noopener noreferrer" className="text-xs text-purple-400 hover:underline">Verify Badge →</a>
+                <a href="https://www.credly.com/..." target="_blank" rel="noopener noreferrer" className="text-xs text-purple-400 hover:underline">Verify Badge →</a>
               </div>
             </motion.div>
           </div>
