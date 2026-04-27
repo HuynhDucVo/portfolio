@@ -97,7 +97,7 @@ export default function Qualification() {
                 className="bg-gray-800 dark:bg-gray-100 rounded-xl p-6 shadow-lg flex flex-col items-center text-center"
               >
                 <img
-                  src="/assets/img/comptia-aplus.png"
+                  {/* src="/assets/img/comptia-aplus.png" */}
                   alt="CompTIA A+ Certification"
                   className="w-32 mb-4"
                 />
