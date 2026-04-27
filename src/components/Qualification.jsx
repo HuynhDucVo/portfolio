@@ -1,13 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Framer Motion variants
 const container = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 }
-  }
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
 };
 
 const fadeInUp = {
@@ -24,127 +20,85 @@ export default function Qualification() {
         initial="hidden"
         whileInView="visible"
         variants={container}
-        viewport={{ once: true, amount: 0.2 }} // Added 'amount' to trigger earlier
+        viewport={{ once: true, amount: 0.1 }}
       >
-        <div className="container mx-auto px-6 max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="container mx-auto px-6 max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-          {/* ---------------- LEFT: EDUCATION ---------------- */}
-          <div>
+          {/* ---------------- LEFT: EDUCATION (Spans 2 columns) ---------------- */}
+          <div className="lg:col-span-2">
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl font-bold mb-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+              className="text-3xl font-bold mb-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
             >
               Education
             </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg mb-8 text-gray-300 dark:text-gray-600"
-            >
+            <motion.p variants={fadeInUp} className="text-md mb-8 text-gray-400">
               My academic background
             </motion.p>
 
-            <ol className="relative border-l-2 border-white dark:border-gray-900 pl-6 space-y-10">
-              {/* SJSU */}
+            <ol className="relative border-l-2 border-blue-500/30 pl-8 space-y-10">
               <motion.li variants={fadeInUp} className="relative">
-                <span className="absolute -left-[31px] top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
-                <h3 className="text-2xl font-semibold">San Jose State University</h3>
-                <p className="italic text-gray-300 dark:text-gray-700">
-                  B.S. Computer Science — GPA 3.93
-                </p>
-                <p className="text-sm text-gray-400 dark:text-gray-600">
-                  Aug 2023 – May 2025 • San Jose, CA
-                </p>
-                <ul className="list-disc ml-6 mt-2 text-gray-300 dark:text-gray-700 space-y-1">
-                  <li>Object-Oriented Programming & Data Structures</li>
-                  <li>Computer Systems & Software Engineering</li>
-                  <li>Theory of Computation & Discrete Math</li>
-                  <li>Database Management Systems</li>
+                <span className="absolute -left-[39px] top-1.5 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900 dark:border-white"></span>
+                <h3 className="text-xl font-bold">San Jose State University</h3>
+                <p className="text-blue-400 dark:text-blue-600 font-medium">B.S. Computer Science — GPA 3.93</p>
+                <p className="text-sm text-gray-500 mb-2">Aug 2023 – May 2025</p>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1 text-sm text-gray-400 dark:text-gray-600 list-disc ml-4">
+                  <li>Object-Oriented Programming</li>
+                  <li>Software Engineering</li>
+                  <li>Data Structures</li>
+                  <li>Database Systems</li>
                 </ul>
               </motion.li>
 
-              {/* EVC */}
               <motion.li variants={fadeInUp} className="relative">
-                <span className="absolute -left-[31px] top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
-                <h3 className="text-2xl font-semibold">Evergreen Valley College</h3>
-                <p className="italic text-gray-300 dark:text-gray-700">
-                  A.S. Computer Science, AS‑T
-                </p>
-                <p className="text-sm text-gray-400 dark:text-gray-600">
-                  Aug 2020 – May 2023 • San Jose, CA
-                </p>
+                <span className="absolute -left-[39px] top-1.5 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900 dark:border-white"></span>
+                <h3 className="text-xl font-bold">Evergreen Valley College</h3>
+                <p className="text-blue-400 dark:text-blue-600 font-medium">A.S. Computer Science, AS‑T</p>
+                <p className="text-sm text-gray-500">Aug 2020 – May 2023</p>
               </motion.li>
             </ol>
           </div>
 
-          {/* ---------------- RIGHT: CERTIFICATIONS ---------------- */}
-          <div>
+          {/* ---------------- RIGHT: CERTIFICATIONS (Small & Compact) ---------------- */}
+          <div className="flex flex-col gap-4">
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+              className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
             >
               Certifications
             </motion.h2>
-            <motion.p
+
+            {/* A+ Card */}
+            <motion.div
               variants={fadeInUp}
-              className="text-lg mb-8 text-gray-300 dark:text-gray-600"
+              className="bg-gray-800/50 dark:bg-gray-50 border border-gray-700 dark:border-gray-200 rounded-xl p-4 flex items-center gap-4 shadow-sm"
             >
-              Verified credentials & achievements
-            </motion.p>
+              <img src="/assets/img/comptia-aplus.png" alt="A+" className="w-16 h-16 object-contain" />
+              <div className="flex-1">
+                <h3 className="text-lg font-bold leading-tight">CompTIA A+</h3>
+                <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">Core IT & Troubleshooting</p>
+                <a href="https://www.credly.com/..." target="_blank" rel="noopener noreferrer" className="text-xs text-blue-400 hover:underline">Verify Badge →</a>
+              </div>
+            </motion.div>
 
-            <div className="space-y-8">
-              {/* A+ */}
-              <motion.div
-                variants={fadeInUp}
-                className="bg-gray-800 dark:bg-gray-100 rounded-xl p-6 shadow-lg flex flex-col items-center text-center"
-              >
-                <img
-                  src="/assets/img/comptia-aplus.png"
-                  alt="CompTIA A+"
-                  className="w-32 mb-4"
-                />
-                <h3 className="text-2xl font-semibold mb-1">CompTIA A+</h3>
-                <p className="text-gray-400 dark:text-gray-700 text-sm mb-4">
-                  Certified in 2026 — Core IT troubleshooting and security fundamentals.
-                </p>
-                <a
-                  href="https://www.credly.com/..."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition"
-                >
-                  View Credential
-                </a>
-              </motion.div>
-
-              {/* Network+ */}
-              <motion.div
-                variants={fadeInUp}
-                className="bg-gray-800 dark:bg-gray-100 rounded-xl p-6 shadow-lg flex flex-col items-center text-center"
-              >
-                <img
-                  src="/assets/img/Comptia_Network+.png"
-                  alt="CompTIA Network+"
-                  className="w-32 mb-4"
-                />
-                <h3 className="text-2xl font-semibold mb-1">CompTIA Network+</h3>
-                <p className="text-gray-400 dark:text-gray-700 text-sm mb-4">
-                  Certified in 2026 — Networking concepts and infrastructure.
-                </p>
-                <a
-                  href="https://www.credly.com/..."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition"
-                >
-                  View Credential
-                </a>
-              </motion.div>
-            </div>
+            {/* Network+ Card */}
+            <motion.div
+              variants={fadeInUp}
+              className="bg-gray-800/50 dark:bg-gray-50 border border-gray-700 dark:border-gray-200 rounded-xl p-4 flex items-center gap-4 shadow-sm"
+            >
+              <img src="/assets/img/Comptia_Network+.png" alt="Net+" className="w-16 h-16 object-contain" />
+              <div className="flex-1">
+                <h3 className="text-lg font-bold leading-tight">CompTIA Network+</h3>
+                <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">Infrastructure & Security</p>
+                <a href="https://www.credly.com/..." target="_blank" rel="noopener noreferrer" className="text-xs text-purple-400 hover:underline">Verify Badge →</a>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </motion.section> {/* Properly closing the section here */}
 
-      <div className="w-full h-px bg-gray-800 dark:bg-gray-200 opacity-60 my-8" />
+        </div>
+      </motion.section>
+
+      <div className="w-full h-px bg-gray-800 dark:bg-gray-200 opacity-20 my-8" />
     </>
   );
 }
