@@ -25,37 +25,52 @@ export default function Qualification() {
         <div className="container mx-auto px-6 max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12">
 
           {/* ---------------- LEFT: EDUCATION (Spans 2 columns) ---------------- */}
-          <div className="lg:col-span-2">
+          <div>
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl font-bold mb-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
+              className="text-4xl font-bold mb-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent"
             >
               Education
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-md mb-8 text-gray-400">
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg mb-8 text-gray-300 dark:text-gray-600"
+            >
               My academic background
             </motion.p>
 
-            <ol className="relative border-l-2 border-blue-500/30 pl-8 space-y-10">
+            <ol className="relative border-l-2 border-white dark:border-gray-900 pl-6 space-y-10">
+
+              {/* SJSU */}
               <motion.li variants={fadeInUp} className="relative">
-                <span className="absolute -left-[39px] top-1.5 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900 dark:border-white"></span>
-                <h3 className="text-xl font-bold">San Jose State University</h3>
-                <p className="text-blue-400 dark:text-blue-600 font-medium">B.S. Computer Science — GPA 3.93</p>
-                <p className="text-sm text-gray-500 mb-2">Aug 2023 – May 2025</p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1 text-sm text-gray-400 dark:text-gray-600 list-disc ml-4">
-                  <li>Object-Oriented Programming</li>
-                  <li>Software Engineering</li>
-                  <li>Data Structures</li>
-                  <li>Database Systems</li>
+                <span className="absolute -left-6 top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
+                <h3 className="text-2xl font-semibold">San Jose State University</h3>
+                <p className="italic text-gray-300 dark:text-gray-700">
+                  B.S. Computer Science — GPA 3.93
+                </p>
+                <p className="text-sm text-gray-400 dark:text-gray-600">
+                  Aug 2023 – May 2025 • San Jose, CA
+                </p>
+                <ul className="list-disc ml-6 mt-2 text-gray-300 dark:text-gray-700 space-y-1">
+                  <li>Object-Oriented Programming & Data Structures</li>
+                  <li>Computer Systems & Software Engineering</li>
+                  <li>Theory of Computation & Discrete Math</li>
+                  <li>Database Management Systems</li>
                 </ul>
               </motion.li>
 
+              {/* EVC */}
               <motion.li variants={fadeInUp} className="relative">
-                <span className="absolute -left-[39px] top-1.5 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900 dark:border-white"></span>
-                <h3 className="text-xl font-bold">Evergreen Valley College</h3>
-                <p className="text-blue-400 dark:text-blue-600 font-medium">A.S. Computer Science, AS‑T</p>
-                <p className="text-sm text-gray-500">Aug 2020 – May 2023</p>
+                <span className="absolute -left-6 top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
+                <h3 className="text-2xl font-semibold">Evergreen Valley College</h3>
+                <p className="italic text-gray-300 dark:text-gray-700">
+                  A.S. Computer Science, AS‑T
+                </p>
+                <p className="text-sm text-gray-400 dark:text-gray-600">
+                  Aug 2020 – May 2023 • San Jose, CA
+                </p>
               </motion.li>
+
             </ol>
           </div>
 
