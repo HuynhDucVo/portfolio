@@ -3,9 +3,13 @@ import { motion } from 'framer-motion';
 
 // Framer Motion variants
 const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.2 } }
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 }
+  }
 };
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 }
@@ -20,8 +24,7 @@ export default function Qualification() {
         initial="hidden"
         whileInView="visible"
         variants={container}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.2 }} // Added 'amount' to trigger earlier
       >
         <div className="container mx-auto px-6 max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12">
 
@@ -41,10 +44,9 @@ export default function Qualification() {
             </motion.p>
 
             <ol className="relative border-l-2 border-white dark:border-gray-900 pl-6 space-y-10">
-
               {/* SJSU */}
               <motion.li variants={fadeInUp} className="relative">
-                <span className="absolute -left-6 top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
+                <span className="absolute -left-[31px] top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
                 <h3 className="text-2xl font-semibold">San Jose State University</h3>
                 <p className="italic text-gray-300 dark:text-gray-700">
                   B.S. Computer Science — GPA 3.93
@@ -62,7 +64,7 @@ export default function Qualification() {
 
               {/* EVC */}
               <motion.li variants={fadeInUp} className="relative">
-                <span className="absolute -left-6 top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
+                <span className="absolute -left-[31px] top-2 w-3 h-3 bg-blue-500 dark:bg-green-500 rounded-full ring-4 ring-gray-900 dark:ring-white"></span>
                 <h3 className="text-2xl font-semibold">Evergreen Valley College</h3>
                 <p className="italic text-gray-300 dark:text-gray-700">
                   A.S. Computer Science, AS‑T
@@ -71,7 +73,6 @@ export default function Qualification() {
                   Aug 2020 – May 2023 • San Jose, CA
                 </p>
               </motion.li>
-
             </ol>
           </div>
 
@@ -89,7 +90,7 @@ export default function Qualification() {
             >
               Verified credentials & achievements
             </motion.p>
-          
+
             <div className="space-y-8">
               {/* A+ */}
               <motion.div
@@ -98,16 +99,15 @@ export default function Qualification() {
               >
                 <img
                   src="/assets/img/comptia-aplus.png"
-                  alt="CompTIA A+ Certification"
+                  alt="CompTIA A+"
                   className="w-32 mb-4"
                 />
                 <h3 className="text-2xl font-semibold mb-1">CompTIA A+</h3>
                 <p className="text-gray-400 dark:text-gray-700 text-sm mb-4">
-                  Certified in 2026 — Core IT troubleshooting, hardware, OS, networking, and security fundamentals.
+                  Certified in 2026 — Core IT troubleshooting and security fundamentals.
                 </p>
-          
                 <a
-                  href="https://www.credly.com/badges/335065a5-54ac-4289-b943-c42f3af97260/linked_in_profile"
+                  href="https://www.credly.com/..."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition"
@@ -115,24 +115,23 @@ export default function Qualification() {
                   View Credential
                 </a>
               </motion.div>
-          
+
               {/* Network+ */}
               <motion.div
                 variants={fadeInUp}
                 className="bg-gray-800 dark:bg-gray-100 rounded-xl p-6 shadow-lg flex flex-col items-center text-center"
               >
                 <img
-                  src=""
-                  alt="CompTIA Network+ Certification"
+                  src="/assets/img/Comptia_Network+.png"
+                  alt="CompTIA Network+"
                   className="w-32 mb-4"
                 />
                 <h3 className="text-2xl font-semibold mb-1">CompTIA Network+</h3>
                 <p className="text-gray-400 dark:text-gray-700 text-sm mb-4">
-                  Certified in 2026 — Networking concepts, infrastructure, operations, security, and troubleshooting.
+                  Certified in 2026 — Networking concepts and infrastructure.
                 </p>
-          
                 <a
-                  href="https://www.credly.com/badges/99f29bfb-4722-4485-aff7-5c7dd02405a8/linked_in_profile"
+                  href="https://www.credly.com/..."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition"
@@ -142,7 +141,8 @@ export default function Qualification() {
               </motion.div>
             </div>
           </div>
-      </motion.section>
+        </div>
+      </motion.section> {/* Properly closing the section here */}
 
       <div className="w-full h-px bg-gray-800 dark:bg-gray-200 opacity-60 my-8" />
     </>
